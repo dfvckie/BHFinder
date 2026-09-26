@@ -2257,17 +2257,8 @@ section[id] {
 
 /* Ultra-Narrow Devices (<= 360px) */
 @media (max-width: 360px) {
-  .btn-book#surveyNavBtn span {
-    display: none;
-  }
-
   .btn-book#surveyNavBtn {
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    padding: 7px 9px;
     border-radius: var(--radius-sm);
   }
 }
