@@ -2257,8 +2257,57 @@ section[id] {
 
 /* Ultra-Narrow Devices (<= 360px) */
 @media (max-width: 360px) {
+  .nav-inner {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .nav-actions {
+    flex-shrink: 0;
+    gap: 6px;
+  }
+
   .btn-book#surveyNavBtn {
-    padding: 7px 9px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    gap: 4px;
+    padding: 7px 8px;
+    font-size: 0.75rem;
     border-radius: var(--radius-sm);
+  }
+
+  .hamburger-btn {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo {
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tittle {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 280px) {
+  .main-nav .brand-logo .Logo_name {
+    display: none;
+  }
+
+  .btn-book#surveyNavBtn {
+    padding: 7px 6px;
+  }
+
+  .nav-inner {
+    padding-right: 8px;
+    padding-left: 8px;
   }
 }
