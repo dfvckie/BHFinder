@@ -130,6 +130,11 @@
           <strong>Direct</strong>
           <span>Owner Contact</span>
         </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item" aria-label="Unique web views counted in this browser profile">
+          <strong id="uniqueWebViews">0</strong>
+          <span>WEB VIEWS</span>
+        </div>
       </div>
     </div>
   </section>
@@ -997,6 +1002,30 @@
 
     // Initialize nav button state on load
     updateNavUserState();
+
+    function initializeUniqueWebViews() {
+      const viewCount = document.getElementById('uniqueWebViews');
+      if (!viewCount) return;
+
+      try {
+        const storageKey = 'bhfinder_unique_web_views';
+        const countedKey = 'bhfinder_unique_view_counted';
+        let total = Number.parseInt(localStorage.getItem(storageKey) || '0', 10);
+        if (!Number.isSafeInteger(total) || total < 0) total = 0;
+
+        if (localStorage.getItem(countedKey) !== 'true') {
+          total += 1;
+          localStorage.setItem(storageKey, String(total));
+          localStorage.setItem(countedKey, 'true');
+        }
+
+        viewCount.textContent = String(total);
+      } catch (err) {
+        viewCount.textContent = '—';
+      }
+    }
+
+    initializeUniqueWebViews();
 
     function viewDetails(title, price) {
       openModal(title, `Schedule a viewing or send a direct inquiry for this space listed at ${price}.`);
