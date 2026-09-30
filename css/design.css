@@ -236,6 +236,7 @@ a {
 
 .guide-hero h1 span {
   background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
